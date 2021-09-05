@@ -1,6 +1,7 @@
 setlocal enabledelayedexpansion
 
 
+
 :mainloop
 echo mainlooprestarted
 FOR /L %%C IN (1,1,300) do (
@@ -11,6 +12,7 @@ FOR /L %%C IN (1,1,300) do (
 	if !wakey!==1 goto :mainloop
 	)
 	
+powercfg -hibernate off
 rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 GOTO :EOF
 
